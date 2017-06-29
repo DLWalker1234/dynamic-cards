@@ -13,18 +13,40 @@ createButton.addEventListener("click", function() {
 
 function createCard(userInut) {
 	var card = document.createElement("p");
-	var deleteButton = document.createElement("button")
 	var text = document.createTextNode(inputField.value);
 	card.appendChild(text);
 	let output = document.getElementById("output");
 	output.appendChild(card);
-	deleteButton.value = "delete row";
-	deleteButton.onclick = deleteFunction;
+	// createDeleteButton();
+	card.appendChild("button");
+	
 
 }
 
 
+function deleteCard(card) {
+    card.parentNode.removeChild(p);
+}
 
-console.log("hello")
 
-but.onclick = callJavascriptFunction;
+function createDeleteButton(card, func){
+    var button = document.createElement("input");
+    button.type = "button";
+    button.value = "im a button";
+    button.onclick = deleteCard
+    card.appendChild(button);
+}
+
+
+// <input type="button" value="Remove child1" onClick="removeElement('parentDiv', 'child1');">
+// 
+// function removechildren()
+// {   var node=document.getElementById("fooBar");
+//     node.innerHTML = "";
+// }
+// 
+// function removeElement(elementId) {
+//     // Removes an element from the document
+//     var element = document.getElementById(elementId);
+//     element.parentNode.removeChild(element);
+// }
